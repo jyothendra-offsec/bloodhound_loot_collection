@@ -1,0 +1,12 @@
+# Collected data and local credentials do not belong in this documentation repo.
+*.zip
+*.json
+*.bin
+*.ccache
+*.kirbi
+*.log
+.env
+loot/
+output/
+rusthound_output/
+.rusthound-cache/
