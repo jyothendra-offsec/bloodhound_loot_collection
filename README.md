@@ -226,3 +226,7 @@ Record the collector version, collection time, selected methods, and failed host
 ## About this guide
 
 Based on the supplied training exercise, rewritten with explanations and upstream references. Course screenshots remain with their original publisher. Commands were checked against documentation; no live AD collection was executed to validate this guide.
+
+## Usage terms
+
+Original material owned by 0xjyothendra requires written permission for modification or redistribution. Third-party content, assets, and earlier licensed releases retain their applicable terms. See [LICENSE](LICENSE).
