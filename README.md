@@ -4,6 +4,17 @@ A practical guide to launching **BloodHound Community Edition (CE)** and collect
 
 Use these commands in your own lab or an environment you are authorized to assess. “Loot” here means directory and relationship data—not dumped passwords. **Collection** produces the files; **ingestion** imports them into BloodHound for analysis.
 
+## Choose a collector
+
+| Starting point | Collector | Check before collecting |
+| --- | --- | --- |
+| Authorized Windows session | SharpHound CE | Version compatible with your BloodHound deployment |
+| Linux with domain credentials | NetExec or BloodHound.py CE | AD DNS resolution and installed CE executable |
+| Cross-platform collection | RustHound CE | Output path and DNS versus LDAP target flags |
+| Basic directory collection | bloodyAD | Confirm coverage for the object and relationship types you need |
+
+Run one collector first and verify the resulting upload before combining datasets. Keep the run log so you can trace missing edges to permissions or reachability.
+
 ## Contents
 
 - [Launch BloodHound](#launch-bloodhound)
