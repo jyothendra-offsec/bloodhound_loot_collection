@@ -10,7 +10,7 @@ Use these commands in your own lab or an environment you are authorized to asses
 | --- | --- | --- |
 | Authorized Windows session | SharpHound CE | Version compatible with your BloodHound deployment |
 | Linux with domain credentials | NetExec or BloodHound.py CE | AD DNS resolution and installed CE executable |
-| Cross-platform collection | RustHound CE | Output path and DNS versus LDAP target flags |
+| Cross-platform collection | RustHound CE | output path and DNS versus LDAP target flags |
 | Basic directory collection | bloodyAD | Confirm coverage for the object and relationship types you need |
 
 Run one collector first and verify the resulting upload before combining datasets. Keep the run log so you can trace missing edges to permissions or reachability.
@@ -145,16 +145,15 @@ Transfer the resulting ZIP to the machine with access to your BloodHound UI. A p
 A cross-platform Rust collector for BloodHound CE that does not require .NET. Use the CE build, whose documented executable name is `rusthound-ce`.
 
 ```bash
-rusthound-ce -d [DOMAIN] -u 'username@[DOMAIN]' -p 'password' -n [DC-IP] -o ./rusthound_output -z
+rusthound-ce -d [DOMAIN] -u 'username' -p 'password' -i <IP> -c All
 ```
 
 | Argument | Purpose |
 | --- | --- |
 | `-d` | AD DNS domain |
 | `-u`, `-p` | LDAP identity and password; UPN shown here |
-| `-n` | DNS server IP, not an explicit LDAP target |
-| `-o` | Destination directory |
-| `-z` | Also produce a ZIP archive |
+| `i` | Ip address 
+|`c` | Collection methods 
 
 Add `-i [DC-IP]` if you need to specify the LDAP server IP explicitly. The supplied `rusthound` command uses an older/different executable name; verify the installed binary before copying it. Output goes into `./rusthound_output`.
 
